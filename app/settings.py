@@ -149,6 +149,6 @@ CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 # Configure Django App for Heroku.
 
-django_heroku.settings(locals())
+django_heroku.settings(config=locals(), staticfiles=False, logging=False)
 
 del DATABASES['default']['OPTIONS']['sslmode']
