@@ -7,7 +7,7 @@ from django.shortcuts import render, get_object_or_404
 from django.views.generic import ListView, DetailView, View
 from django.shortcuts import redirect
 from django.utils import timezone
-from .forms import CheckoutForm, CouponForm, RefundForm, PaymentForm
+from .forms import CheckoutForm, CouponForm, RefundForm
 from .models import (
     Address,
     Coupon,
@@ -16,7 +16,6 @@ from .models import (
     OrderItem,
     Payment,
     Refund,
-    UserProfile,
 )
 import stripe
 import random

@@ -46,13 +46,14 @@ class AddressAdmin(admin.ModelAdmin):
         'user',
         'street_address',
         'apartment_address',
+        'city',
         'country',
-        'zip',
+        'zipcode',
         'address_type',
         'default'
     ]
     list_filter = ['default', 'address_type', 'country']
-    search_fields = ['user', 'street_address', 'apartment_address', 'zip']
+    search_fields = ['user', 'street_address', 'apartment_address', 'city', 'zipcode']
 
 
 admin.site.register(Item)
