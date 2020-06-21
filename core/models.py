@@ -23,6 +23,7 @@ ADDRESS_CHOICES = (
 
 
 class Item(models.Model):
+    id = models.IntegerField(primary_key=True)
     title = models.CharField(max_length=100)
     price = models.FloatField()
     discount_price = models.FloatField(blank=True, null=True)
