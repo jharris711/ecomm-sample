@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {%  block content %}
+{% load cloudinary %}
 {% include "navbar.html" with active="/products"  %}
   <!--Main layout-->
   <main class="mt-5 pt-4">
@@ -9,7 +10,7 @@
       <div class="row wow fadeIn">
         <!--Grid column-->
         <div class="col-md-6 mb-4">
-          {{ cloudinary object.image.public_id class="card-img-top" }}
+          {% cloudinary object.image.public_id class="card-img-top" %}
         </div>
         <!--Grid column-->
         <div class="col-md-6 mb-4">

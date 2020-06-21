@@ -43,9 +43,6 @@ class Item(models.Model):
         return "Photo <%s:%s>" % (self.title, public_id)
 
     def __str__(self):
-        return f"{self.id}: {self.title}"
-
-    def __str__(self):
         return self.title
 
     def get_absolute_url(self):
