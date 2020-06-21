@@ -2,7 +2,8 @@ from django.conf import settings
 from django.db import models
 from django.shortcuts import reverse
 from django_countries.fields import CountryField
-from django.db.models.signals import post_save
+from cloudinary.models import CloudinaryField
+import cloudinary.uploader
 
 CATEGORY_CHOICES = (
     ('S', 'Shirt'),
@@ -31,7 +32,18 @@ class Item(models.Model):
     label = models.CharField(choices=LABEL_CHOICES, max_length=1)
     slug = models.SlugField()
     description = models.TextField()
-    image = models.ImageField()
+    image = CloudinaryField('image')
+
+    """ Informative name for model """
+    def __unicode__(self):
+        try:
+            public_id = self.image.public_id
+        except AttributeError:
+            public_id = ''
+        return "Photo <%s:%s>" % (self.title, public_id)
+
+    def __str__(self):
+        return f"{self.id}: {self.title}"
 
     def __str__(self):
         return self.title

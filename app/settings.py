@@ -1,6 +1,7 @@
 import os
 import django_heroku
 import dj_database_url
+import cloudinary
 from dotenv import load_dotenv
 
 
@@ -143,6 +144,13 @@ LOGGING = {
 
 SITE_ID = 1
 LOGIN_REDIRECT_URL = '/'
+
+# -------------------------------- Cloudinary -------------------------------- #
+cloudinary.config(
+    cloud_name=os.getenv('CLOUD_NAME'),
+    api_key=os.getenv('API_KEY'),
+    api_secret=os.getenv("API_SECRET")
+)
 
 # Crispy Forms:
 CRISPY_TEMPLATE_PACK = 'bootstrap4'

@@ -63,7 +63,7 @@
             <div class="card">
               <!--Card image-->
               <div class="view overlay">
-                <img src="{{ item.image.url }}" alt="" class="card-img-top">
+                {% cloudinary item.image.public_id class="card-img-top" %}
                 <a href="{{ item.get_absolute_url }}">
                   <div class="mask rgba-white-slight"></div>
                 </a>
